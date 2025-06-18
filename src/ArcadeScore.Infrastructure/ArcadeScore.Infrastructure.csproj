@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ArcadeScore.Application\ArcadeScore.Application.csproj" />
+    <ProjectReference Include="..\ArcadeScore.Domain\ArcadeScore.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
