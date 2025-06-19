@@ -4,6 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <UserSecretsId>c819f06d-ce37-41ba-bd33-64410b2a70db</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,10 +18,6 @@
     <ProjectReference Include="..\ArcadeScore.Application\ArcadeScore.Application.csproj" />
     <ProjectReference Include="..\ArcadeScore.Domain\ArcadeScore.Domain.csproj" />
     <ProjectReference Include="..\ArcadeScore.Infrastructure\ArcadeScore.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
