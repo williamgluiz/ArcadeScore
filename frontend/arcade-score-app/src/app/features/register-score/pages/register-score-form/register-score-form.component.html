@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="playerName">Player Name:</label>
+    <input id="playerName" formControlName="playerName" />
+    <div *ngIf="form.get('playerName')?.touched && form.get('playerName')?.invalid" style="color:red">
+      Player name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="score">Score:</label>
+    <input type="number" id="score" formControlName="score" />
+    <div *ngIf="form.get('score')?.touched && form.get('score')?.invalid" style="color:red">
+      Score is required and must be zero or more.
+    </div>
+  </div>
+
+  <div>
+    <label for="datePlayed">Date Played:</label>
+    <input type="date" id="datePlayed" formControlName="datePlayed" />
+    <div *ngIf="form.get('datePlayed')?.touched && form.get('datePlayed')?.invalid" style="color:red">
+      Date is required.
+    </div>
+  </div>
+
+  <button type="submit">Register Score</button>
+</form>
+

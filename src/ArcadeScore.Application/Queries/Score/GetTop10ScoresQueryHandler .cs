@@ -56,6 +56,7 @@ namespace ArcadeScore.Application.Queries.Score
                     var player = allPlayers.FirstOrDefault(p => p.Id == s.PlayerId);
                     return new ScoreResultDTO
                     {
+                        PlayerId = player.Id,
                         PlayerName = player?.Name ?? "Unknown",
                         Score = s.Value,
                         DatePlayed = s.DatePlayed

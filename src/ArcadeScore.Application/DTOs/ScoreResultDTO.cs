@@ -9,6 +9,10 @@ namespace ArcadeScore.Application.DTOs
     public class ScoreResultDTO
     {
         /// <summary>
+        /// Gets or sets the ID of the player who achieved the score.
+        /// </summary>
+        public int PlayerId { get; set; }
+        /// <summary>
         /// Gets or sets the name of the player who achieved the score.
         /// </summary>
         public string PlayerName { get; set; }

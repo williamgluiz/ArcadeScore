@@ -1,0 +1,25 @@
+<h2>Top 10 Scores</h2>
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" style="color: red">{{ error }}</div>
+
+<table *ngIf="!loading && !error">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Player</th>
+      <th>Score</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let score of scores; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>
+        <a [routerLink]="['/player', score.playerId]">{{ score.playerName }}</a>
+      </td>
+      <td>{{ score.score }}</td>
+      <td>{{ score.datePlayed | date: 'shortDate' }}</td>
+    </tr>
+  </tbody>
+</table>

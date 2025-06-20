@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+input, button {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form {
+  max-width: 400px;
+}

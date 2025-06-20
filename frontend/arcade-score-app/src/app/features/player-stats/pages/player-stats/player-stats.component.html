@@ -1,0 +1,16 @@
+<h2>Estatísticas de: {{ stats?.playerName }}</h2>
+
+<div *ngIf="stats; else loading">
+  <ul>
+    <li><strong>Partidas jogadas:</strong> {{ stats.totalGames }}</li>
+    <li><strong>Média de Pontuação:</strong> {{ stats.averageScore }}</li>
+    <li><strong>Maior Pontuação:</strong> {{ stats.highestScore }}</li>
+    <li><strong>Menor Pontuação:</strong> {{ stats.lowestScore }}</li>
+    <li><strong>Quantidade de vezes que bateu o próprio recorde:</strong> {{ stats.timesBrokeRecord }}</li>
+    <li><strong>Tempo que joga:</strong> {{ formatPlayPeriod(stats.playPeriod) }}</li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Carregando estatísticas...</p>
+</ng-template>
