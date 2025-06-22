@@ -20,3 +20,37 @@
   color: var(--arcade-primary) !important;
   text-shadow: 0 0 5px var(--arcade-primary);
 }
+
+.banner-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.banner-image {
+  max-width: 100%;
+  max-height: 200px; 
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  object-fit: contain; 
+}
+
+.banner-image:hover {
+  opacity: 1; 
+}
+
+.arcade-footer {
+  background-color: var(--arcade-bg);
+  border-top: 2px solid var(--arcade-secondary);
+  box-shadow: 0 -0.5rem 1rem rgba(0, 255, 255, 0.15);
+  color: var(--arcade-light-text);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  text-shadow: 0 0 3px var(--arcade-primary);
+}
+
+.arcade-title-small {
+  margin: 0;
+}

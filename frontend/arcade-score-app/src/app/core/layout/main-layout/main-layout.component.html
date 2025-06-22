@@ -2,18 +2,11 @@
   <a class="navbar-brand d-flex align-items-center" routerLink="/">
     <span class="arcade-title mb-0">ArcadeScore</span>
   </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  
+
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item me-3">
@@ -27,8 +20,16 @@
 </nav>
 
 <main class="container py-4">
+  <div class="banner-container">
+    <img src="./assets/banner_bg_2.png" alt="Banner" class="banner-image" />
+  </div>
   <router-outlet></router-outlet>
 </main>
 
-
-
+<footer class="arcade-footer text-center py-3 mt-5">
+  <p class="mb-0 arcade-title-small">
+   © 2025 ArcadeScore · Desenvolvido por <a href="https://github.com/williamgluiz" target="_blank" class="arcade-footer-link">
+      William Gabriel Luiz
+    </a>
+  </p>
+</footer>

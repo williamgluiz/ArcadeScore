@@ -1,5 +1,6 @@
 using ArcadeScore.Application.Behaviors;
 using ArcadeScore.Application.Commands.Score;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,9 +20,9 @@ namespace ArcadeScore.Api.Configurations
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(RegisterScoreCommandHandler).Assembly));
 
-            //services.AddValidatorsFromAssemblyContaining<CreateCandidateValidator>();
+            services.AddValidatorsFromAssemblyContaining<RegisterScoreCommandValidator>();
 
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 

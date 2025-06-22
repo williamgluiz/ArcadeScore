@@ -1,4 +1,5 @@
 using ArcadeScore.Api.Configurations;
+using ArcadeScore.API.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +20,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
     app.UseSwaggerConfig();
 
+app.UseGlobalExceptionHandling();
 app.UseApiConfig();
 app.MapControllers();
 app.Run();

@@ -1,11 +1,5 @@
-/* ===============================
-   🎮 ARCADE RETRO THEME (GLOBAL)
-   =============================== */
-  
-/* Fonte arcade */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Paleta de cores (usando CSS Variables) */
 :root {
   --arcade-bg: #1e1f29;
   --arcade-primary: #ff2d95;
@@ -16,7 +10,6 @@
   --arcade-card-bg: #2a2b38;
 }
 
-/* Reset básico */
 body {
   margin: 0;
   padding: 0;
@@ -25,14 +18,12 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Título principal */
 h1, h2, h3, .arcade-title {
   font-family: 'Press Start 2P', cursive;
   color: var(--arcade-secondary);
   text-shadow: 0 0 5px var(--arcade-secondary);
 }
 
-/* Links */
 a {
   color: var(--arcade-secondary);
   text-decoration: none;
@@ -43,7 +34,6 @@ a:hover {
   text-shadow: 0 0 5px var(--arcade-primary);
 }
 
-/* Navbar */
 .navbar {
   background-color: var(--arcade-bg) !important;
   border-bottom: 2px solid var(--arcade-secondary);
@@ -103,7 +93,7 @@ input.form-control::placeholder {
 }
 
 .container {
-  padding: 1.5rem;
+  padding: 0.25rem;
 }
 
 @media (max-width: 768px) {
