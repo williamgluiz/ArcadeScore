@@ -1,0 +1,22 @@
+.arcade-navbar {
+  background-color: var(--arcade-card-bg);
+  border-bottom: 2px solid var(--arcade-secondary);
+  box-shadow: 0 0 10px var(--arcade-secondary);
+}
+
+.navbar-brand img {
+  border-radius: 4px;
+  box-shadow: 0 0 5px var(--arcade-secondary);
+}
+
+.nav-link {
+  color: var(--arcade-light-text) !important;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--arcade-primary) !important;
+  text-shadow: 0 0 5px var(--arcade-primary);
+}

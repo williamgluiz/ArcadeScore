@@ -1,25 +1,196 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===============================
+   🎮 ARCADE RETRO THEME (GLOBAL)
+   =============================== */
+  
+/* Fonte arcade */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Paleta de cores (usando CSS Variables) */
+:root {
+  --arcade-bg: #1e1f29;
+  --arcade-primary: #ff2d95;
+  --arcade-secondary: #00e0ff;
+  --arcade-accent: #8c52ff;
+  --arcade-light-text: #f0f0f0;
+  --arcade-dark-text: #2d2e36;
+  --arcade-card-bg: #2a2b38;
+}
+
+/* Reset básico */
 body {
-  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f2f5;
+  background-color: var(--arcade-bg);
+  color: var(--arcade-light-text);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-input, button {
-  padding: 0.5rem;
-  margin-top: 0.25rem;
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  box-sizing: border-box;
+/* Título principal */
+h1, h2, h3, .arcade-title {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--arcade-secondary);
+  text-shadow: 0 0 5px var(--arcade-secondary);
 }
 
-label {
-  margin-top: 1rem;
+/* Links */
+a {
+  color: var(--arcade-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--arcade-primary);
+  text-shadow: 0 0 5px var(--arcade-primary);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--arcade-bg) !important;
+  border-bottom: 2px solid var(--arcade-secondary);
+}
+
+.navbar-brand {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--arcade-secondary) !important;
+  font-size: 1rem;
+}
+
+.nav-link {
+  color: var(--arcade-light-text) !important;
   font-weight: bold;
+   transition: all 0.3s ease-in-out;
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.75rem;
 }
 
-form {
-  max-width: 400px;
+.nav-link:hover {
+  color: var(--arcade-primary) !important;
+}
+
+.card {
+  background-color: var(--arcade-card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+  font-size: 0.75rem;
+}
+
+input.form-control, select.form-control, textarea.form-control {
+  background-color: var(--arcade-dark-text);
+  color: var(--arcade-light-text);
+  border: 1px solid var(--arcade-secondary);
+  font-size: 1rem;
+}
+
+input.form-control::placeholder {
+  color: #aaa;
+}
+
+.btn-arcade {
+  background-color: var(--arcade-primary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px var(--arcade-primary);
+}
+
+.btn-arcade:hover {
+  background-color: var(--arcade-secondary);
+  box-shadow: 0 0 10px var(--arcade-secondary);
+}
+
+.container {
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+}
+
+label.form-label {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--arcade-secondary);
+  text-shadow: 0 0 4px var(--arcade-secondary);
+}
+
+.btn-arcade {
+  background-color: var(--arcade-primary);
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px var(--arcade-primary), 0 0 20px var(--arcade-primary);
+  text-shadow: 0 0 3px #000;
+}
+
+.btn-arcade:hover {
+  background-color: var(--arcade-secondary);
+  box-shadow: 0 0 12px var(--arcade-secondary), 0 0 24px var(--arcade-secondary);
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.btn-arcade:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  color:#aaa;
+}
+
+.navbar-toggler {
+  border-color: var(--arcade-secondary); 
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.arcade-title {
+  font-family: 'Press Start 2P', monospace;
+  color: var(--arcade-primary);
+  text-shadow:
+    0 0 5px var(--arcade-primary),
+    0 0 10px var(--arcade-primary),
+    0 0 20px var(--arcade-secondary);
+  animation: neonPulse 2s ease-in-out infinite alternate;
+  font-size: 1.2rem;
+}
+
+@keyframes neonPulse {
+  from {
+    text-shadow:
+      0 0 5px var(--arcade-primary),
+      0 0 10px var(--arcade-primary),
+      0 0 20px var(--arcade-secondary);
+  }
+  to {
+    text-shadow:
+      0 0 10px var(--arcade-secondary),
+      0 0 20px var(--arcade-secondary),
+      0 0 40px var(--arcade-primary);
+  }
+}
+
+.nav-link:hover {
+  animation: linkFlicker 0.2s infinite alternate;
+}
+
+@keyframes linkFlicker {
+  from {
+    text-shadow: 0 0 5px var(--arcade-primary);
+  }
+  to {
+    text-shadow: 0 0 2px var(--arcade-secondary);
+  }
 }

@@ -1,0 +1,33 @@
+.stat-card {
+  background-color: var(--arcade-card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--arcade-secondary);
+  transition: transform 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--arcade-secondary);
+}
+
+.stat-label {
+  font-family: 'Press Start 2P', cursive;
+
+  color: var(--arcade-secondary);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px var(--arcade-secondary);
+}
+
+.stat-value {
+
+  font-weight: bold;
+  color: var(--arcade-light-text);
+  text-shadow: 0 0 3px var(--arcade-primary);
+}
+
+.neon-border {
+  border: 2px solid var(--arcade-secondary);
+}

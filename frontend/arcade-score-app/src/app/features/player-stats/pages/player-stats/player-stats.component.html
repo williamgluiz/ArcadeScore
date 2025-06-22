@@ -1,16 +1,53 @@
-<h2>Estatísticas de: {{ stats?.playerName }}</h2>
+<div class="container mt-5">
+  <div *ngIf="stats; else loading">
+    <h2 class="arcade-title text-center mb-4">Estatísticas de: {{ stats.playerName }}</h2>
 
-<div *ngIf="stats; else loading">
-  <ul>
-    <li><strong>Partidas jogadas:</strong> {{ stats.totalGames }}</li>
-    <li><strong>Média de Pontuação:</strong> {{ stats.averageScore }}</li>
-    <li><strong>Maior Pontuação:</strong> {{ stats.highestScore }}</li>
-    <li><strong>Menor Pontuação:</strong> {{ stats.lowestScore }}</li>
-    <li><strong>Quantidade de vezes que bateu o próprio recorde:</strong> {{ stats.timesBrokeRecord }}</li>
-    <li><strong>Tempo que joga:</strong> {{ formatPlayPeriod(stats.playPeriod) }}</li>
-  </ul>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="stat-card neon-border">
+          <p class="stat-label">Partidas Jogadas</p>
+          <p class="stat-value">{{ stats.totalGames }}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-card neon-border">
+          <p class="stat-label">Média de Pontuação</p>
+          <p class="stat-value">{{ stats.averageScore }}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-card neon-border">
+          <p class="stat-label">Maior Pontuação</p>
+          <p class="stat-value">{{ stats.highestScore }}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-card neon-border">
+          <p class="stat-label">Menor Pontuação</p>
+          <p class="stat-value">{{ stats.lowestScore }}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-card neon-border">
+          <p class="stat-label">Recordes Batidos</p>
+          <p class="stat-value">{{ stats.timesBrokeRecord }}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-card neon-border">
+          <p class="stat-label">Tempo que Joga</p>
+          <p class="stat-value">{{ formatPlayPeriod(stats.playPeriod) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <p class="text-center arcade-title">Carregando estatísticas...</p>
+  </ng-template>
 </div>
-
-<ng-template #loading>
-  <p>Carregando estatísticas...</p>
-</ng-template>

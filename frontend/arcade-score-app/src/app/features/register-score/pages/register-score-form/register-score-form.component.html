@@ -1,28 +1,63 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="playerName">Player Name:</label>
-    <input id="playerName" formControlName="playerName" />
-    <div *ngIf="form.get('playerName')?.touched && form.get('playerName')?.invalid" style="color:red">
-      Player name is required.
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-6">
+      <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+          <h5 class="card-title text-center arcade-title mb-4">Registrar Pontuação</h5>
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-4">
+              <label for="datePlayed" class="form-label">Data da Partida:</label>
+              <input type="date" id="datePlayed" class="form-control" formControlName="datePlayed" />
+              <div *ngIf="form.get('datePlayed')?.touched && form.get('datePlayed')?.invalid" class="text-danger mt-1 small">
+                Data é obrigatória.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="score" class="form-label">Pontuação:</label>
+              <input type="number" id="score" class="form-control" formControlName="score" />
+              <div *ngIf="form.get('score')?.touched && form.get('score')?.invalid" class="text-danger mt-1 small">
+                Pontuação é obrigatória. O valor deve ser maior ou igual a zero.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="playerName" class="form-label">Player Name:</label>
+              <input type="text" id="playerName" class="form-control" formControlName="playerName" placeholder="e.g. Ryu" />
+              <div *ngIf="form.get('playerName')?.touched && form.get('playerName')?.invalid" class="text-danger mt-1 small">
+                Nome do(a) jogador(a) é obrigatório.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-arcade w-100" [disabled]="form.invalid">
+              Salvar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-6 d-none d-md-flex justify-content-center">
+      <img src="/assets/bg.png" alt="Arcade Illustration" class="img-fluid" style="max-height: 400px;" />
+    </div> -->
+  </div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-4" style="z-index: 9999;">
+  <div
+    class="toast align-items-center text-white border-0 show"
+    [ngClass]="toastClass"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    *ngIf="showToast"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="showToast = false"></button>
     </div>
   </div>
-
-  <div>
-    <label for="score">Score:</label>
-    <input type="number" id="score" formControlName="score" />
-    <div *ngIf="form.get('score')?.touched && form.get('score')?.invalid" style="color:red">
-      Score is required and must be zero or more.
-    </div>
-  </div>
-
-  <div>
-    <label for="datePlayed">Date Played:</label>
-    <input type="date" id="datePlayed" formControlName="datePlayed" />
-    <div *ngIf="form.get('datePlayed')?.touched && form.get('datePlayed')?.invalid" style="color:red">
-      Date is required.
-    </div>
-  </div>
-
-  <button type="submit">Register Score</button>
-</form>
-
+</div>

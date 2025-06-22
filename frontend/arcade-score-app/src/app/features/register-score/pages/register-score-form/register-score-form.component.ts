@@ -11,6 +11,9 @@ import { ScoreService } from '../../services/score.service';
 })
 export class RegisterScoreFormComponent {
   form: FormGroup;
+  showToast: boolean = false;
+  toastMessage: string = '';
+  toastClass: string = '';
 
   constructor(private fb: FormBuilder, private scoreService: ScoreService) {
     this.form = this.fb.group({
@@ -24,18 +27,33 @@ export class RegisterScoreFormComponent {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
-    } 
+    }
+
+    this.toastMessage = 'Registering score...';
+    this.toastClass = 'bg-info';
+    this.showToast = true;
+
     this.scoreService.registerScore(this.form.value).subscribe({
       next: () => {
-        alert('Score registered successfully!');
+        this.toastMessage = 'Score registered successfully!';
+        this.toastClass = 'bg-success';
+
         this.form.reset();
+
+        setTimeout(() => {
+          this.showToast = false;
+        }, 4000);
       },
       error: (err) => {
         console.error(err);
-        alert('Failed to register score.');
-      },
-    });
+        this.toastMessage = 'Failed to register score.';
+        this.toastClass = 'bg-danger';
 
+        setTimeout(() => {
+          this.showToast = false;
+        }, 4000);
+      }
+    });
   }
-  
+
 }
