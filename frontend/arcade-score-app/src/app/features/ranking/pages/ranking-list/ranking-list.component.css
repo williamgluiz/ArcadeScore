@@ -24,7 +24,7 @@
 }
 
 .first-place {
-  background-color: rgba(255, 215, 0, 0.15); /* dourado claro */
+  background-color: rgba(255, 215, 0, 0.15); 
   font-weight: bold;
   color: var(--arcade-primary);
   text-shadow: 0 0 6px var(--arcade-primary);
