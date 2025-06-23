@@ -112,7 +112,7 @@ O layout também inclui fontes com estilo retrô e uma imagem decorativa ao lado
 ## Instruções de Docker
 Para facilitar a execução da API em ambiente isolado, criamos um arquivo específico com as instruções de uso do Docker.
 
-Por favor, consulte o ./README_DOCKER.md para detalhes sobre como construir e rodar o container da API com Docker.
+Por favor, consulte o README_DOCKER.md para detalhes sobre como construir e rodar o container da API com Docker.
 
 ## Contribuindo
 
